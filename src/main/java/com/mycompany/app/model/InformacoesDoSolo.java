@@ -31,4 +31,6 @@ public class InformacoesDoSolo {
     public void setQuantidadeIdeal(Double quantidadeIdeal) {
         QuantidadeIdeal = quantidadeIdeal;
     }
+
+
 }

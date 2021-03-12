@@ -3,8 +3,7 @@ package com.mycompany.app.model;
 import java.util.Date;
 
 public class InformacoesDaAnalise {
-  
- 
+
     private Double numeroTalhao;
     private Double areaTotal;
     private Double areaTalhao;
