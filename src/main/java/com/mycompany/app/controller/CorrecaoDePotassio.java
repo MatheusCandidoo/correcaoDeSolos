@@ -1,6 +1,6 @@
 package com.mycompany.app.controller;
 
-public class correcaoDePotassio {
+public class CorrecaoDePotassio {
 
     private Double participacaoPotassioDesejada;
     private Integer fontePotassioEscolhida;
