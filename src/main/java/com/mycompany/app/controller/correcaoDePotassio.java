@@ -9,9 +9,10 @@ public class correcaoDePotassio {
     private Double calcioNoSolo;
     private Double magnesioNoSolo;
     private Double hALNoSolo;
+    private Double eficienciaDoPotassio = 85.00;
 
 
-    public double informacoesPotassio(int fontePotassioEscolhida) {
+    public double informacoesPotassio() {
         switch (fontePotassioEscolhida) {
             case 1:
                 return 58;
@@ -37,21 +38,25 @@ public class correcaoDePotassio {
         return potassioNoSolo / ((calcioNoSolo + magnesioNoSolo + potassioNoSolo) + hALNoSolo) * 100;
     }
 
-    public Double participacaoIdealPotassioCTC (){
-        if(texturaDoSolo == 1 || texturaDoSolo == 2){
+    public Double participacaoIdealPotassioCTC() {
+        if (texturaDoSolo == 1 || texturaDoSolo == 2) {
             return 3.0;
         }
         return 0.0;
     }
 
-    public double calculoNecessidadePotassioEmDecimetroCubico(){
-        double calculoDePotassio = ((potassioNoSolo * participacaoPotassioDesejada)/participacaoAtualDoPotassio())- potassioNoSolo;
+    public Double calculoNecessidadePotassioEmDecimetroCubico() {
+        double calculoDePotassio = ((potassioNoSolo * participacaoPotassioDesejada) / participacaoAtualDoPotassio()) - potassioNoSolo;
 
-        if(calculoDePotassio < 0.01){
+        if (calculoDePotassio < 0.01) {
             return 0.0;
         }
 
-        return  calculoDePotassio;
+        return calculoDePotassio;
+    }
+
+    public Double calculoAplicacaoDePotassio() {
+        return ((((((calculoNecessidadePotassioEmDecimetroCubico() * 39.1 * 10) * 2) * 1.2) * 100) / eficienciaDoPotassio / 100) * 100) / informacoesPotassio();
     }
 
 }
