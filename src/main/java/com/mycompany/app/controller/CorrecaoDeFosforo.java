@@ -8,9 +8,9 @@ public class CorrecaoDeFosforo {
     private Double eficienciaDeFosforo;
 
 
-    public int teorDePentoxidoDeFosforo(int fonteDeFosforo) {
+    public double teorDePentoxidoDeFosforo(int fonteDeFosforo) {
         switch (fonteDeFosforo) {
-            case 1, 5, 12:
+            case 1:
                 return 18;
             case 2:
                 return 41;
@@ -18,6 +18,8 @@ public class CorrecaoDeFosforo {
                 return 48;
             case 4:
                 return 45;
+            case 5:
+                return 18;
             case 6:
                 return 33;
             case 7:
@@ -27,9 +29,11 @@ public class CorrecaoDeFosforo {
             case 9:
                 return 24;
             case 10:
-                return 18,5;
+                return 18.5;
             case 11:
                 return 52;
+            case 12:
+                return 18;
         }
         return 0;
     }
@@ -41,6 +45,7 @@ public class CorrecaoDeFosforo {
             return (teorNoSoloAtingir - teorNoSoloAtual)
 
     }
+
 
 }
 
