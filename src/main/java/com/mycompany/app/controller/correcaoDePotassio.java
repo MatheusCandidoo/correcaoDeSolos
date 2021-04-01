@@ -44,4 +44,14 @@ public class correcaoDePotassio {
         return 0.0;
     }
 
+    public double calculoNecessidadePotassioEmDecimetroCubico(){
+        double calculoDePotassio = ((potassioNoSolo * participacaoPotassioDesejada)/participacaoAtualDoPotassio())- potassioNoSolo;
+
+        if(calculoDePotassio < 0.01){
+            return 0.0;
+        }
+
+        return  calculoDePotassio;
+    }
+
 }
