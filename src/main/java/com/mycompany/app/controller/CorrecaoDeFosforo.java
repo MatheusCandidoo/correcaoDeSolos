@@ -7,7 +7,6 @@ public class CorrecaoDeFosforo {
     private int fonteDeFosforo;
     private Double eficienciaDeFosforo;
 
-
     public double teorDePentoxidoDeFosforo(int fonteDeFosforo) {
         switch (fonteDeFosforo) {
             case 1:
@@ -38,14 +37,16 @@ public class CorrecaoDeFosforo {
         return 0;
     }
 
-    public Double transformacaoIdeal (Double teorNoSoloAtingir, Double teorNoSoloAtual){
-        if((teorNoSoloAtingir - teorNoSoloAtual)<0.01){
+    public Double transformacaoIdeal(Double teorNoSoloAtingir, Double teorNoSoloAtual) {
+        if ((teorNoSoloAtingir - teorNoSoloAtual) < 0.01) {
             return 0.0;
         }
-            return (teorNoSoloAtingir - teorNoSoloAtual)
-
+        return (teorNoSoloAtingir - teorNoSoloAtual)
     }
 
+    public Double quantidadeAplicarFosforo() {
+        return (((teorDePentoxidoDeFosforo(fonteDeFosforo) * 2) * 2.29) * 100 / eficienciaDeFosforo) * 100 / transformacaoIdeal(teorNoSoloAtingir, teorNoSoloAtual)
+    }
 
 }
 
