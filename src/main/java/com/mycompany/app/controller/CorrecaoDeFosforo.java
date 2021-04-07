@@ -1,15 +1,15 @@
 package com.mycompany.app.controller;
 
-
 import com.mycompany.app.constantes.FonteDeFosforo;
 
 public class CorrecaoDeFosforo {
 
     private Double teorNoSoloAtingir;
     private Double teorNoSoloAtual;
-    private int fonteDeFosforo;
+    private FonteDeFosforo fonteDeFosforo;
     private Double eficienciaDeFosforo;
-
+    private Double calculoTrasformacaoIdeal = transformacaoIdeal(teorNoSoloAtingir, teorNoSoloAtual);
+    private Double calculoTeorPentoxidoDeFosforo = ((teorDePentoxidoDeFosforo(fonteDeFosforo) * 2) * 2.29) * 100;
 
     public double teorDePentoxidoDeFosforo(FonteDeFosforo fonteDoTeor) {
         switch (fonteDoTeor) {
@@ -45,11 +45,11 @@ public class CorrecaoDeFosforo {
         if ((teorNoSoloAtingir - teorNoSoloAtual) < 0.01) {
             return 0.0;
         }
-        return (teorNoSoloAtingir - teorNoSoloAtual)
+        return (teorNoSoloAtingir - teorNoSoloAtual);
     }
 
     public Double quantidadeAplicarFosforo() {
-        return (((teorDePentoxidoDeFosforo(fonteDeFosforo) * 2) * 2.29) * 100 / eficienciaDeFosforo) * 100 / transformacaoIdeal(teorNoSoloAtingir, teorNoSoloAtual)
+        return (calculoTeorPentoxidoDeFosforo / eficienciaDeFosforo) * 100 / calculoTrasformacaoIdeal;
     }
 
 }
