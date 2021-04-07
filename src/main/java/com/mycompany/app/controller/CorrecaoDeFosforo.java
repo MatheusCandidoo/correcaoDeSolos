@@ -1,5 +1,8 @@
 package com.mycompany.app.controller;
 
+
+import com.mycompany.app.constantes.FonteDeFosforo;
+
 public class CorrecaoDeFosforo {
 
     private Double teorNoSoloAtingir;
@@ -7,31 +10,32 @@ public class CorrecaoDeFosforo {
     private int fonteDeFosforo;
     private Double eficienciaDeFosforo;
 
-    public double teorDePentoxidoDeFosforo(int fonteDeFosforo) {
-        switch (fonteDeFosforo) {
-            case 1:
+
+    public double teorDePentoxidoDeFosforo(FonteDeFosforo fonteDoTeor) {
+        switch (fonteDoTeor) {
+            case Superfosfato_Simples:
                 return 18;
-            case 2:
+            case Superfosfato_Triplo:
                 return 41;
-            case 3:
+            case MAP:
                 return 48;
-            case 4:
+            case DAP:
                 return 45;
-            case 5:
+            case Yoorin:
                 return 18;
-            case 6:
+            case Fosfato_Arad:
                 return 33;
-            case 7:
+            case Fosfato_Gafsa:
                 return 29;
-            case 8:
+            case Fosfato_Daoui:
                 return 32;
-            case 9:
+            case Fosf_Patos_Minas:
                 return 24;
-            case 10:
+            case Escoria_de_Thomas:
                 return 18.5;
-            case 11:
+            case Acido_Fosforico:
                 return 52;
-            case 12:
+            case Multif_Magnesiano:
                 return 18;
         }
         return 0;
