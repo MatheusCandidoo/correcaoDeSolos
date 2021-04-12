@@ -1,10 +1,12 @@
 package com.mycompany.app.controller;
 
+import com.mycompany.app.constantes.TexturaDoSolo;
+
 public class CorrecaoDePotassio {
 
     private double participacaoPotassioDesejada;
     private int fontePotassioEscolhida;
-    private int texturaDoSolo;
+    private TexturaDoSolo texturaDoSolo;
     private double potassioNoSolo;
     private double calcioNoSolo;
     private double magnesioNoSolo;
@@ -39,7 +41,7 @@ public class CorrecaoDePotassio {
     }
 
     public double participacaoIdealPotassioCTC() {
-        if (texturaDoSolo == 1 || texturaDoSolo == 2) {
+        if (texturaDoSolo == TexturaDoSolo.Argiloso || texturaDoSolo == TexturaDoSolo.Textura_Media) {
             return 3.0;
         }
         return 0.0;
