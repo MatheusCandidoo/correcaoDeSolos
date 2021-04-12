@@ -4,38 +4,38 @@ import java.util.Date;
 
 public class InformacoesDaAnalise {
 
-    private Double numeroTalhao;
-    private Double areaTotal;
-    private Double areaTalhao;
+    private double numeroTalhao;
+    private double areaTotal;
+    private double areaTalhao;
     private String soloArgiloso;
-    private Integer profundideAnalise;
-    private Double numeroAnalise;
+    private int profundideAnalise;
+    private double numeroAnalise;
     private Date dataAnalise;
     private String responsavelTecnico;
-    private Integer talhao;
-    private Integer texturaSolo;
+    private int talhao;
+    private int texturaSolo;
 
-    public Double getNumeroTalhao() {
+    public double getNumeroTalhao() {
         return numeroTalhao;
     }
 
-    public void setNumeroTalhao(Double numeroTalhao) {
+    public void setNumeroTalhao(double numeroTalhao) {
         this.numeroTalhao = numeroTalhao;
     }
 
-    public Double getAreaTotal() {
+    public double getAreaTotal() {
         return areaTotal;
     }
 
-    public void setAreaTotal(Double areaTotal) {
+    public void setAreaTotal(double areaTotal) {
         this.areaTotal = areaTotal;
     }
 
-    public Double getAreaTalhao() {
+    public double getAreaTalhao() {
         return areaTalhao;
     }
 
-    public void setAreaTalhao(Double areaTalhao) {
+    public void setAreaTalhao(double areaTalhao) {
         this.areaTalhao = areaTalhao;
     }
 
@@ -47,15 +47,15 @@ public class InformacoesDaAnalise {
         this.soloArgiloso = soloArgiloso;
     }
 
-    public Integer getProfundideAnalise() {
+    public int getProfundideAnalise() {
         return profundideAnalise;
     }
 
-    public void setProfundideAnalise(Integer profundideAnalise) {
+    public void setProfundideAnalise(int profundideAnalise) {
         this.profundideAnalise = profundideAnalise;
     }
 
-    public Double getNumeroAnalise() {
+    public double getNumeroAnalise() {
         return numeroAnalise;
     }
 
@@ -79,19 +79,19 @@ public class InformacoesDaAnalise {
         this.responsavelTecnico = responsavelTecnico;
     }
 
-    public Integer getTalhao() {
+    public int getTalhao() {
         return talhao;
     }
 
-    public void setTalhao(Integer talhao) {
+    public void setTalhao(int talhao) {
         this.talhao = talhao;
     }
 
-    public Integer getTexturaSolo() {
+    public int getTexturaSolo() {
         return texturaSolo;
     }
 
-    public void setTexturaSolo(Integer texturaSolo) {
+    public void setTexturaSolo(int texturaSolo) {
         this.texturaSolo = texturaSolo;
     }
 }

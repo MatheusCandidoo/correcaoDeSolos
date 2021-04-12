@@ -2,14 +2,14 @@ package com.mycompany.app.controller;
 
 public class CorrecaoDePotassio {
 
-    private Double participacaoPotassioDesejada;
-    private Integer fontePotassioEscolhida;
-    private Integer texturaDoSolo;
-    private Double potassioNoSolo;
-    private Double calcioNoSolo;
-    private Double magnesioNoSolo;
-    private Double hALNoSolo;
-    private Double eficienciaDoPotassio = 85.00;
+    private double participacaoPotassioDesejada;
+    private int fontePotassioEscolhida;
+    private int texturaDoSolo;
+    private double potassioNoSolo;
+    private double calcioNoSolo;
+    private double magnesioNoSolo;
+    private double hALNoSolo;
+    private double eficienciaDoPotassio = 85.00;
 
 
     public double informacoesPotassio() {
@@ -27,25 +27,25 @@ public class CorrecaoDePotassio {
         }
     }
 
-    public Double participacaoPotassioAposCorrecao() {
+    public double participacaoPotassioAposCorrecao() {
         if ((participacaoPotassioDesejada) > 0.001) {
             return participacaoPotassioDesejada;
         }
         return 0.0;
     }
 
-    public Double participacaoAtualDoPotassio() {
+    public double participacaoAtualDoPotassio() {
         return potassioNoSolo / ((calcioNoSolo + magnesioNoSolo + potassioNoSolo) + hALNoSolo) * 100;
     }
 
-    public Double participacaoIdealPotassioCTC() {
+    public double participacaoIdealPotassioCTC() {
         if (texturaDoSolo == 1 || texturaDoSolo == 2) {
             return 3.0;
         }
         return 0.0;
     }
 
-    public Double calculoNecessidadePotassioEmDecimetroCubico() {
+    public double calculoNecessidadePotassioEmDecimetroCubico() {
         double calculoDePotassio = ((potassioNoSolo * participacaoPotassioDesejada) / participacaoAtualDoPotassio()) - potassioNoSolo;
 
         if (calculoDePotassio < 0.01) {
@@ -55,7 +55,7 @@ public class CorrecaoDePotassio {
         return calculoDePotassio;
     }
 
-    public Double calculoAplicacaoDePotassio() {
+    public double calculoAplicacaoDePotassio() {
         return ((((((calculoNecessidadePotassioEmDecimetroCubico() * 39.1 * 10) * 2) * 1.2) * 100) / eficienciaDoPotassio / 100) * 100) / informacoesPotassio();
     }
 

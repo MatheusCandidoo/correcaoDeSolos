@@ -2,7 +2,7 @@ package com.mycompany.app.controller;
 
 public class ControleDeQualidade {
 
-    public Double controleDeQualidade(String elemento, Double texturaDoSolo){
+    public double controleDeQualidade(String elemento, double texturaDoSolo){
         switch (elemento){
             case "fosforo" :
                 if(texturaDoSolo == 1){

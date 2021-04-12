@@ -5,8 +5,8 @@ import java.util.Date;
 public class InformacoesDoSolo {
   
     private String Elemento;
-    private Double QuantidateAtual;
-    private Double QuantidadeIdeal;
+    private double QuantidateAtual;
+    private double QuantidadeIdeal;
 
     public String getElemento() {
         return Elemento;
@@ -16,7 +16,7 @@ public class InformacoesDoSolo {
         Elemento = elemento;
     }
 
-    public Double getQuantidateAtual() {
+    public double getQuantidateAtual() {
         return QuantidateAtual;
     }
 
@@ -24,7 +24,7 @@ public class InformacoesDoSolo {
         QuantidateAtual = quantidateAtual;
     }
 
-    public Double getQuantidadeIdeal() {
+    public double getQuantidadeIdeal() {
         return QuantidadeIdeal;
     }
 

@@ -4,12 +4,12 @@ import com.mycompany.app.constantes.FonteDeFosforo;
 
 public class CorrecaoDeFosforo {
 
-    private Double teorNoSoloAtingir;
-    private Double teorNoSoloAtual;
+    private double teorNoSoloAtingir;
+    private double teorNoSoloAtual;
     private FonteDeFosforo fonteDeFosforo;
-    private Double eficienciaDeFosforo;
+    private double eficienciaDeFosforo;
 
-    public CorrecaoDeFosforo(Double teorNoSoloAtingir, Double teorNoSoloAtual, FonteDeFosforo fonteDeFosforo, Double eficienciaDeFosforo) {
+    public CorrecaoDeFosforo(double teorNoSoloAtingir, double teorNoSoloAtual, FonteDeFosforo fonteDeFosforo, double eficienciaDeFosforo) {
         this.teorNoSoloAtingir = teorNoSoloAtingir;
         this.teorNoSoloAtual = teorNoSoloAtual;
         this.fonteDeFosforo = fonteDeFosforo;
@@ -17,7 +17,7 @@ public class CorrecaoDeFosforo {
     }
 
 
-    public Double teorDePentoxidoDeFosforo(FonteDeFosforo fonteDoTeor) {
+    public double teorDePentoxidoDeFosforo(FonteDeFosforo fonteDoTeor) {
         switch (fonteDoTeor) {
             case Superfosfato_Simples:
                 return 18.0;
@@ -47,22 +47,22 @@ public class CorrecaoDeFosforo {
         return 0.0;
     }
 
-    public Double transformacaoIdeal(Double teorNoSoloAtingir, Double teorNoSoloAtual) {
+    public double transformacaoIdeal(Double teorNoSoloAtingir, Double teorNoSoloAtual) {
         if ((teorNoSoloAtingir - teorNoSoloAtual) < 0.01) {
             return 0.0;
         }
         return (teorNoSoloAtingir - teorNoSoloAtual);
     }
 
-    public Double calculoTrasformacaoIdeal(){
+    public double calculoTrasformacaoIdeal(){
         return transformacaoIdeal(teorNoSoloAtingir, teorNoSoloAtual);
     }
 
-    public Double calculoTeorPentoxidoDeFosforo(){
+    public double calculoTeorPentoxidoDeFosforo(){
         return ((teorDePentoxidoDeFosforo(fonteDeFosforo) * 2) * 2.29) * 100;
     }
 
-    public Double quantidadeAplicarFosforo() {
+    public double quantidadeAplicarFosforo() {
         return (calculoTeorPentoxidoDeFosforo() / eficienciaDeFosforo) * 100 / calculoTrasformacaoIdeal();
     }
 
