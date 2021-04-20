@@ -48,15 +48,14 @@ public class CorrecaoDeFosforo {
     }
 
     public double transformacaoIdeal(Double teorNoSoloAtingir, Double teorNoSoloAtual) {
-
         return (teorNoSoloAtingir - teorNoSoloAtual);
     }
 
-    public double calculoTrasformacaoIdeal(){
+    public double calculoTrasformacaoIdeal() {
         return transformacaoIdeal(teorNoSoloAtingir, teorNoSoloAtual);
     }
 
-    public double calculoTeorPentoxidoDeFosforo(){
+    public double calculoTeorPentoxidoDeFosforo() {
         return ((teorDePentoxidoDeFosforo(fonteDeFosforo) * 2) * 2.29) * 100;
     }
 
