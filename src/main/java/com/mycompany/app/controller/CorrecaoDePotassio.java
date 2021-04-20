@@ -50,15 +50,11 @@ public class CorrecaoDePotassio {
     public double calculoNecessidadePotassioEmDecimetroCubico() {
         double calculoDePotassio = ((potassioNoSolo * participacaoPotassioDesejada) / participacaoAtualDoPotassio()) - potassioNoSolo;
 
-        if (calculoDePotassio < 0.01) {
-            return 0.0;
-        }
-
         return calculoDePotassio;
     }
 
     public double calculoAplicacaoDePotassio() {
-        return ((((((calculoNecessidadePotassioEmDecimetroCubico() * 39.1 * 10) * 2) * 1.2) * 100) / eficienciaDoPotassio / 100) * 100) / informacoesPotassio();
+        return (((((calculoNecessidadePotassioEmDecimetroCubico() * 39.1 * 10) * 2) * 1.2) / eficienciaDoPotassio) * 100) / informacoesPotassio();
     }
 
 }

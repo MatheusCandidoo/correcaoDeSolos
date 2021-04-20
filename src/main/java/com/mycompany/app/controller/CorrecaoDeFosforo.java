@@ -48,9 +48,7 @@ public class CorrecaoDeFosforo {
     }
 
     public double transformacaoIdeal(Double teorNoSoloAtingir, Double teorNoSoloAtual) {
-        if ((teorNoSoloAtingir - teorNoSoloAtual) < 0.01) {
-            return 0.0;
-        }
+
         return (teorNoSoloAtingir - teorNoSoloAtual);
     }
 
