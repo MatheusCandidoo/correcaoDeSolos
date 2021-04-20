@@ -11,7 +11,6 @@ public class CorrecaoDePotassio {
     private double calcioNoSolo;
     private double magnesioNoSolo;
     private double hALNoSolo;
-    private double eficienciaDoPotassio = 85.00;
 
 
     public double informacoesPotassio() {
@@ -41,19 +40,15 @@ public class CorrecaoDePotassio {
     }
 
     public double participacaoIdealPotassioCTC() {
-        if (texturaDoSolo == TexturaDoSolo.Argiloso || texturaDoSolo == TexturaDoSolo.Textura_Media) {
-            return 3.0;
-        }
-        return 0.0;
+        return 3.0;
     }
 
     public double calculoNecessidadePotassioEmDecimetroCubico() {
-        double calculoDePotassio = ((potassioNoSolo * participacaoPotassioDesejada) / participacaoAtualDoPotassio()) - potassioNoSolo;
-
-        return calculoDePotassio;
+        return ((potassioNoSolo * participacaoPotassioDesejada) / participacaoAtualDoPotassio()) - potassioNoSolo;
     }
 
     public double calculoAplicacaoDePotassio() {
+        double eficienciaDoPotassio = 85.00;
         return (((((calculoNecessidadePotassioEmDecimetroCubico() * 39.1 * 10) * 2) * 1.2) / eficienciaDoPotassio) * 100) / informacoesPotassio();
     }
 
