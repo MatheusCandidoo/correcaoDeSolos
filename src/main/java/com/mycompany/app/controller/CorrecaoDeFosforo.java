@@ -65,43 +65,17 @@ public class CorrecaoDeFosforo {
     }
 
     public double custoDeAplicacaoDaCorrecaoDeFosforo(FonteDeFosforo fonteDoTeor, double custoDoFosforoPorFonte) {
-        switch (fonteDoTeor) {
-            case Superfosfato_Simples:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 18 * 2.42;
-            case Superfosfato_Triplo:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 41 * 2.42;
-            case MAP:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 48 * 2.42;
-            case DAP:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 45 * 2.42;
-            case Yoorin:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 18 * 2.42;
-            case Fosfato_Arad:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 33 * 2.42;
-            case Fosfato_Gafsa:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 29 * 2.42;
-            case Fosfato_Daoui:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 32 * 2.42;
-            case Fosf_Patos_Minas:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 24 * 2.42;
-            case Escoria_de_Thomas:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 18.5 * 2.42;
-            case Acido_Fosforico:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 52 * 2.42;
-            case Multif_Magnesiano:
-                return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / 18 * 2.42;
-        }
-        return 0.0;
+        return custoDoFosforoPorFonte * calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 2.42;
     }
 
     public double calculoNutrienteResultanteCorrecao1(FonteDeFosforo fonteDoTeor) {
         switch (fonteDoTeor) {
             case Superfosfato_Simples:
-                return  calculoDeEficienciaDaTranformacaoIdeal() * 0.10;
+                return calculoDeEficienciaDaTranformacaoIdeal() / 2.42 * 0.10;
             case Yoorin:
-                return  calculoDeEficienciaDaTranformacaoIdeal() / 18 * 0.15;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.15;
             case Multif_Magnesiano:
-                return  calculoDeEficienciaDaTranformacaoIdeal() * 0.11;
+                return calculoDeEficienciaDaTranformacaoIdeal() / 2.42 * 0.11;
         }
         return 0.0;
     }
@@ -110,7 +84,7 @@ public class CorrecaoDeFosforo {
         switch (fonteDoTeor) {
             case Superfosfato_Simples:
             case Yoorin:
-                return  "enxofre";
+                return "enxofre";
             case Multif_Magnesiano:
                 return "magnesio";
         }
@@ -120,31 +94,33 @@ public class CorrecaoDeFosforo {
     public double calculoNutrienteResultanteCorrecao2(FonteDeFosforo fonteDoTeor) {
         switch (fonteDoTeor) {
             case Superfosfato_Simples:
-                return  calculoDeEficienciaDaTranformacaoIdeal() / 18 * 0.28;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.28;
             case Superfosfato_Triplo:
-                return  calculoDeEficienciaDaTranformacaoIdeal() / 41 * 0.20;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.20;
             case MAP:
-                return calculoDeEficienciaDaTranformacaoIdeal() / 48 * 0.09;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.09;
             case DAP:
-                return  calculoDeEficienciaDaTranformacaoIdeal() / 45 * 0.16;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.16;
             case Yoorin:
-                return calculoDeEficienciaDaTranformacaoIdeal() / 18 * 0.28;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.28;
             case Fosfato_Arad:
-                return  calculoDeEficienciaDaTranformacaoIdeal() / 33 * 0.52;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.52;
             case Fosfato_Gafsa:
-                return calculoDeEficienciaDaTranformacaoIdeal() / 29 * 0.52;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.52;
             case Fosfato_Daoui:
-                return  calculoDeEficienciaDaTranformacaoIdeal() / 32 * 0.45;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.45;
             case Fosf_Patos_Minas:
-                return calculoDeEficienciaDaTranformacaoIdeal() / 24 * 0.28;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.28;
             case Escoria_de_Thomas:
-                return calculoDeEficienciaDaTranformacaoIdeal() / 18.5 * 0.44;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.44;
             case Acido_Fosforico:
-                return  calculoDeEficienciaDaTranformacaoIdeal() / 52 * 0.00;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.00;
             case Multif_Magnesiano:
-                return  calculoDeEficienciaDaTranformacaoIdeal() / 18 * 0.18;
+                return calculoDeEficienciaDaTranformacaoIdeal() / teorDePentoxidoDeFosforo(fonteDoTeor) * 0.18;
+
+        }
         return 0.0;
-    }}
+    }
 
     public String nomeNutrienteResultanteCorrecao2(FonteDeFosforo fonteDoTeor) {
         switch (fonteDoTeor) {
