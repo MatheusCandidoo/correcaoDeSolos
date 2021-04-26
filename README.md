@@ -1,6 +1,6 @@
 # correcaoDeSolos
 
-### Cloc antes das melhorias
+### Cloc GERAL do projeto antes das melhorias
 
 
 |Language                    | files   |      blank   |    comment     |     code|
@@ -18,7 +18,7 @@
 - Removido código desnecessário de dados da análise - [commit](https://github.com/LuizHNRQ/correcaoDeSolos/commit/6c2055762c3b665dabc4ba50f6a727260b7db72e) 
 
 
-### Cloc depois das melhorias
+### Cloc GERAL do projeto depois das melhorias
 
 |Language                    | files   |      blank   |    comment     |     code|
 |----------------------------|---------|--------------|----------------|---------|
@@ -27,6 +27,32 @@
 |XML                         |    1    |         0    |         0      |      16 |
 |Markdown                    |    1    |         4    |         0      |       8 |
 |SUM:                        |   12    |        70    |        14      |     315 |
+
+-----------------------------------------------------------------------------------------------------
+
+### Cloc ESPECÍFICO do código criado antes das melhorias
+
+
+|Language                    | files   |      blank   |    comment     |     code|
+|----------------------------|---------|--------------|----------------|---------|
+|Java                        |    7    |        56    |         4      |     304 |
+|SUM:                        |    7    |        56    |         4      |     304 |
+
+### Problema identificado
+
+- Refatorado a função de calculo dos custos da correcao - [commit](https://github.com/LuizHNRQ/correcaoDeSolos/commit/69d0298bb6d0f3c83b8f6d423d37d5fcff269fcc)
+
+Descrição do problema: A funcão não utilizava do switch que retornava a o teor do Pentoxido de Fosforo, portanto assim que aplicado pode ser reduzido a inserção manual, assim evitando erros e melhorando a manutenabilidade.
+
+### Cloc ESPECÍFICO do código criado depois das melhorias
+
+|Language                    | files   |      blank   |    comment     |     code|
+|----------------------------|---------|--------------|----------------|---------|
+|Java                        |    7    |        57    |         4      |     279 |
+|SUM:                        |    7    |        57    |         4      |     279 |
+
+
+
 
 
 
