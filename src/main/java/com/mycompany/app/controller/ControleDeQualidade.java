@@ -45,6 +45,9 @@ public class ControleDeQualidade {
                 return 0.0;
             case "aluminio":
                 return 0.0;
+                
+            case "hal":
+                return 0.0;
 
         }
         return 0.0;
